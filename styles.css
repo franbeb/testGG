@@ -126,7 +126,7 @@ header {
 
 /* Hero section styles */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1600/800') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/proyects/Lithium-Salt-Mine1600x800.jpg') center/cover no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
