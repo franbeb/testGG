@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Goose Exploration | Investors</title>
+    <link rel="icon" href="images/logo/logominimalistic.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Additional styles for investors page */
+        .investors-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1600/500') center/cover no-repeat;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+        
+        .investors-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .investors-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .card h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--gold-primary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--gold-light);
+            color: var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .stat-value {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+        }
+        
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .financial-table th, .financial-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .financial-table th {
+            background-color: var(--gold-light);
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        
+        .financial-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .doc-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .doc-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .doc-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--gold-light);
+            color: var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .doc-info {
+            flex: 1;
+        }
+        
+        .doc-title {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+        
+        .doc-date {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .doc-download {
+            background-color: var(--gold-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .doc-download:hover {
+            background-color: var(--gold-secondary);
+        }
+        
+        .investor-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .investor-cta h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+        
+        .investor-cta p {
+            margin-bottom: 25px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="110" style="vertical-align: middle; margin-right: 10px;">
+                        <span class="logo-text" style="font-size: 24px; font-weight: 700; color: #d4af37;">Golden Goose</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li class="dropdown">
+                        <a href="projects.html">Projects <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="el-quemado.html">El Quemado</a>
+                            <a href="rincon-salar.html">Rincon Salar</a>
+                            <a href="quebec-claim.html">Quebec Claim</a>
+                        </div>
+                    </li>
+                    <li><a href="investors.html" class="active">Investors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Investors Header -->
+    <section class="investors-header">
+        <div class="container">
+            <h1>Investor Relations</h1>
+            <p>Golden Goose Exploration is committed to creating long-term value for our shareholders through responsible resource development and sustainable growth.</p>
+        </div>
+    </section>
+
+    <!-- Investment Highlights -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Investment Highlights</h2>
+            </div>
+            <div class="card">
+                <p>Golden Goose Exploration provides investors with exposure to a diversified portfolio of high-potential mineral assets across multiple jurisdictions, focusing on critical minerals essential for the green energy transition.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-value">$24.5M</div>
+                        <div class="stat-label">Market Cap</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="stat-value">11,600</div>
+                        <div class="stat-label">Total Hectares</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-value">$8.2M</div>
+                        <div class="stat-label">Cash Position</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stock Performance -->
+    <section class="section projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stock Performance</h2>
+            </div>
+            <div class="card">
+                <h3>Stock Chart</h3>
+                <p>TSXV: GGE | OTCQB: GGEXF</p>
+                <div class="chart-container">
+                    <canvas id="stockChart"></canvas>
+                </div>
+                <p style="text-align: right; margin-top: 10px; font-style: italic;">Last updated: October 15, 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Information -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Financial Information</h2>
+            </div>
+            <div class="card">
+                <h3>Financial Highlights</h3>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th>Financial Metric</th>
+                            <th>2023</th>
+                            <th>2022</th>
+                            <th>2021</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Revenue</td>
+                            <td>$2.1M</td>
+                            <td>$1.8M</td>
+                            <td>$1.2M</td>
+                        </tr>
+                        <tr>
+                            <td>Operating Expenses</td>
+                            <td>$5.3M</td>
+                            <td>$4.7M</td>
+                            <td>$3.9M</td>
+                        </tr>
+                        <tr>
+                            <td>Exploration Expenditures</td>
+                            <td>$7.2M</td>
+                            <td>$5.5M</td>
+                            <td>$3.1M</td>
+                        </tr>
+                        <tr>
+                            <td>Cash & Equivalents</td>
+                            <td>$8.2M</td>
+                            <td>$6.5M</td>
+                            <td>$4.8M</td>
+                        </tr>
+                        <tr>
+                            <td>Total Assets</td>
+                            <td>$32.4M</td>
+                            <td>$28.7M</td>
+                            <td>$22.1M</td>
+                        </tr>
+                        <tr>
+                            <td>Total Liabilities</td>
+                            <td>$3.6M</td>
+                            <td>$2.9M</td>
+                            <td>$2.3M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports & Presentations -->
+    <section class="section projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Reports & Presentations</h2>
+            </div>
+            <div class="card">
+                <h3>Documents & Downloads</h3>
+                <ul class="doc-list">
+                    <li class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <div class="doc-title">Q3 2023 Financial Report</div>
+                            <div class="doc-date">Released: October 15, 2023</div>
+                        </div>
+                        <button class="doc-download">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </li>
+                    <li class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <div class="doc-title">Annual Report 2022</div>
+                            <div class="doc-date">Released: March 30, 2023</div>
+                        </div>
+                        <button class="doc-download">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </li>
+                    <li class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <div class="doc-info">
+                            <div class="doc-title">Investor Presentation Q4 2023</div>
+                            <div class="doc-date">Released: September 18, 2023</div>
+                        </div>
+                        <button class="doc-download">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </li>
+                    <li class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="doc-info">
+                            <div class="doc-title">El Quemado Technical Report</div>
+                            <div class="doc-date">Released: July 12, 2023</div>
+                        </div>
+                        <button class="doc-download">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </li>
+                    <li class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <div class="doc-title">Corporate Governance Guidelines</div>
+                            <div class="doc-date">Updated: January 15, 2023</div>
+                        </div>
+                        <button class="doc-download">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Contact -->
+    <section class="section">
+        <div class="container">
+            <div class="investor-cta">
+                <h3>Interested in Investing?</h3>
+                <p>For investor inquiries or to receive our investor package, please contact our Investor Relations team or subscribe to our investor newsletter to stay updated on the latest developments.</p>
+                <div>
+                    <a href="contact.html" class="btn">Contact Investor Relations</a>
+                    <a href="#" class="btn btn-outline">Subscribe to Updates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with our latest projects and company news.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="90" style="vertical-align: middle; margin-right: 10px;">
+                        <span style="font-size: 20px; font-weight: 700; color: #d4af37;">Golden Goose</span>
+                    </div>
+                    <p>A premier geological exploration company dedicated to discovering and developing mineral resources with a commitment to sustainability and responsible practices.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Mining Way, Resource City</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@goldengoose.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="investors.html">Investors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Golden Goose Exploration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Initialize stock chart
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stock chart
+            const stockCtx = document.getElementById('stockChart').getContext('2d');
+            const stockChart = new Chart(stockCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                    datasets: [{
+                        label: 'Stock Price (CAD)',
+                        data: [0.32, 0.35, 0.38, 0.41, 0.45, 0.48, 0.52, 0.49, 0.54, 0.58],
+                        backgroundColor: 'rgba(212, 175, 55, 0.2)',
+                        borderColor: 'rgba(212, 175, 55, 1)',
+                        borderWidth: 2,
+                        tension: 0.3,
+                        pointBackgroundColor: 'rgba(212, 175, 55, 1)',
+                        pointRadius: 4
+                    },
+                    {
+                        label: 'TSX Venture Index (Normalized)',
+                        data: [0.30, 0.31, 0.33, 0.32, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39],
+                        backgroundColor: 'rgba(51, 51, 51, 0.1)',
+                        borderColor: 'rgba(51, 51, 51, 0.7)',
+                        borderWidth: 1.5,
+                        tension: 0.3,
+                        pointRadius: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 0.25,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Document download buttons
+            const downloadButtons = document.querySelectorAll('.doc-download');
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('In a real website, this would download the document. Demo only.');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
