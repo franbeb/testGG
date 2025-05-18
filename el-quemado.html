@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>Golden Goose Exploration | El Quemado Project</title>
     <link rel="icon" href="images/logo/logominimalistic.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,10 +14,12 @@
         .project-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/proyects/proyecto.jpg') center/cover no-repeat;
             height: 70vh;
+            height: calc(var(--vh, 1vh) * 70);
             display: flex;
             align-items: center;
             color: var(--white);
             margin-top: 80px;
+            padding: 0 15px;
         }
         
         .project-hero-content {
@@ -258,303 +260,335 @@
             }
             
             .project-hero h1 {
-                font-size: 36px;
+                font-size: 32px;
+            }
+            
+            .project-overview {
+                padding: 20px;
+                margin-top: -40px;
+            }
+            
+            .key-facts {
+                gap: 20px;
+            }
+            
+            .project-map {
+                height: 350px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-date, .timeline-content {
+                width: 100%;
+                text-align: left;
+                padding: 0 0 0 50px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">                    <a href="index.html">                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="110" style="vertical-align: middle; margin-right: 10px;">                        <span class="logo-text" style="font-size: 24px; font-weight: 700; color: #d4af37;">Golden Goose</span>                    </a>                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="team.html">Our Team</a></li>
-                    <li class="dropdown">
-                        <a href="projects.html" class="active">Projects <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="el-quemado.html" class="active">El Quemado</a>
-                            <a href="rincon-salar.html">Rincon Salar</a>
-                            <a href="quebec-claim.html">Quebec Claim</a>
-                        </div>
-                    </li>
-                    <li><a href="investors.html">Investors</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Project Hero -->
-    <section class="project-hero">
-        <div class="container">
-            <div class="project-hero-content">
-                <h1>El Quemado Lithium Project</h1>
-                <div class="location">
-                    <i class="fas fa-map-marker-alt"></i> Salta Province, Argentina
-                </div>
-                <p>Our flagship lithium project located in the heart of South America's "Lithium Triangle", targeting high-grade lithium-bearing pegmatite formations with excellent development potential.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="section">
-        <div class="container">
-            <div class="project-overview">
-                <h2>Project Overview</h2>
-                <p>The El Quemado Lithium Project encompasses 4,200 hectares of highly prospective land in the Salta Province of northwestern Argentina. The project is strategically located within South America's renowned "Lithium Triangle", which hosts approximately 60% of the world's lithium resources.</p>
-                <p>Initial surveys and exploration work have identified multiple lithium-bearing pegmatite formations with significant concentrations of spodumene, the primary lithium-bearing mineral. Preliminary sampling has returned lithium oxide (Li₂O) grades ranging from 1.2% to 3.5%, indicating substantial economic potential.</p>
-                <p>Golden Goose Exploration acquired the El Quemado property in 2020 and has since conducted extensive geological mapping, geophysical surveys, and preliminary drilling to delineate the resource potential. The company is currently advancing the project through a comprehensive exploration and development program aimed at establishing a maiden resource estimate by late 2024.</p>
-                
-                <div class="key-facts">
-                    <div class="fact-item">
-                        <div class="fact-icon">
-                            <i class="fas fa-map"></i>
-                        </div>
-                        <div class="fact-text">
-                            <h4>Location</h4>
-                            <p>Salta Province, Argentina</p>
-                        </div>
-                    </div>
-                    <div class="fact-item">
-                        <div class="fact-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <div class="fact-text">
-                            <h4>Project Size</h4>
-                            <p>4,200 hectares</p>
-                        </div>
-                    </div>
-                    <div class="fact-item">
-                        <div class="fact-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <div class="fact-text">
-                            <h4>Target Resource</h4>
-                            <p>Lithium (pegmatite)</p>
-                        </div>
-                    </div>
-                    <div class="fact-item">
-                        <div class="fact-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="fact-text">
-                            <h4>Current Phase</h4>
-                            <p>Advanced Exploration</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project Gallery -->
-            <div class="project-gallery">
-                <h2>Project Gallery</h2>
-                <div class="gallery-grid">
-                                        <div class="gallery-item">                        <img src="images/proyects/proyecto.jpg" alt="El Quemado Aerial View">                    </div>
-                                        <div class="gallery-item">                        <img src="images/proyects/proyecto.jpg" alt="Lithium Pegmatite Sample">                    </div>
-                    <div class="gallery-item">
-                        <img src="images/proyects/proyecto.jpg" alt="Drilling Operations">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/proyects/proyecto.jpg" alt="Core Samples">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/proyects/proyecto.jpg" alt="Project Geologists">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/proyects/proyecto.jpg" alt="Site Infrastructure">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Geology & Mineralogy -->
-            <div class="project-section">
-                <h2>Geology & Mineralogy</h2>
-                <p>The El Quemado property is characterized by several large pegmatite bodies intruded into metamorphic host rocks. The pegmatites are predominantly composed of quartz, feldspar, and mica, with significant concentrations of spodumene, the primary lithium-bearing mineral of economic interest.</p>
-                <p>Geological mapping and sampling have identified at least seven major pegmatite dykes across the property, ranging from 5 to 25 meters in width and extending for several hundred meters along strike. The pegmatites are exposed at surface in numerous locations, facilitating cost-effective exploration and future mining operations.</p>
-                <p>Mineralogical studies have confirmed that spodumene is the dominant lithium-bearing mineral, with crystals typically ranging from 2 to 15 cm in length. Additional valuable minerals identified include tantalite, beryl, and cassiterite, which may provide valuable by-product credits in future mining operations.</p>
-                
-                <div class="project-map" id="geology-map"></div>
-            </div>
-            
-            <!-- Exploration Work -->
-            <div class="project-section">
-                <h2>Exploration & Development</h2>
-                <p>Golden Goose Exploration has implemented a systematic exploration program at El Quemado, including:</p>
-                <ul>
-                    <li>Detailed geological mapping and surface sampling across the entire property</li>
-                    <li>High-resolution geophysical surveys including magnetic and radiometric surveys</li>
-                    <li>Trenching and channel sampling of exposed pegmatite bodies</li>
-                    <li>Initial diamond drilling program consisting of 25 holes totaling 3,500 meters</li>
-                    <li>Preliminary metallurgical testing to assess lithium recoverability</li>
-                    <li>Environmental baseline studies in preparation for future development activities</li>
-                </ul>
-                <p>Initial drilling results have been highly encouraging, with highlight intercepts including:</p>
-                <ul>
-                    <li>12.5 meters at 1.8% Li₂O from 35 meters (hole EQ-22-003)</li>
-                    <li>18.2 meters at 1.5% Li₂O from 42 meters (hole EQ-22-007)</li>
-                    <li>8.6 meters at 2.3% Li₂O from 75 meters (hole EQ-22-012)</li>
-                    <li>22.4 meters at 1.6% Li₂O from 120 meters (hole EQ-23-021)</li>
-                </ul>
-                <p>These results confirm the presence of high-grade lithium mineralization at depth and support the project's significant economic potential.</p>
-            </div>
-            
-            <!-- Development Timeline -->
-            <div class="project-section">
-                <h2>Development Timeline</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <h4>Q3 2020</h4>
-                            <p>Project Acquisition</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Property Acquisition & Initial Assessment</h4>
-                            <p>Golden Goose acquired the El Quemado property and conducted initial site assessment and data compilation.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <h4>2021-2022</h4>
-                            <p>Phase 1 Exploration</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Geological Mapping & Initial Drilling</h4>
-                            <p>Completed geological mapping, surface sampling, and initial 2,500m drilling program.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <h4>2023</h4>
-                            <p>Phase 2 Exploration</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Expanded Drilling & Metallurgical Testing</h4>
-                            <p>Additional 3,500m of drilling, preliminary resource modeling, and initial metallurgical test work.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <h4>2024</h4>
-                            <p>Resource Definition</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Maiden Resource Estimate & PEA</h4>
-                            <p>Planned completion of maiden resource estimate and preliminary economic assessment.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <h4>2025-2026</h4>
-                            <p>Development</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Feasibility & Permitting</h4>
-                            <p>Feasibility studies, environmental permitting, and project financing.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Environment & Community -->
-            <div class="project-section">
-                <h2>Environment & Community</h2>
-                <p>Golden Goose Exploration is committed to the highest standards of environmental stewardship and community engagement at the El Quemado Project. The company has implemented comprehensive environmental baseline studies to assess and mitigate potential impacts of future mining activities.</p>
-                <p>Our engagement with local communities includes:</p>
-                <ul>
-                    <li>Regular consultation meetings with community leaders and stakeholders</li>
-                    <li>Local employment and training initiatives</li>
-                    <li>Support for community development projects in education and healthcare</li>
-                    <li>Transparent communication regarding project development and environmental management</li>
-                </ul>
-                <p>The company is working closely with local and regional authorities to ensure all exploration and development activities comply with Argentine regulations and international best practices for sustainable mining.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h3>Interested in El Quemado?</h3>
-                <p>Contact our team for more information about the El Quemado Lithium Project or to discuss potential investment or partnership opportunities.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn">Contact Us</a>
-                    <a href="investors.html" class="btn btn-outline">Investor Information</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <p>Stay updated with our latest projects and company news.</p>
-                </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">                    <div class="footer-logo">                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="90" style="vertical-align: middle; margin-right: 10px;">                        <span style="font-size: 20px; font-weight: 700; color: #d4af37;">Golden Goose</span>                    </div>                    <p>A premier geological exploration company dedicated to discovering and developing mineral resources with a commitment to sustainability and responsible practices.</p>                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Mining Way, Resource City</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@goldengoose.com</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <nav class="navbar">
+                    <div class="logo">                    <a href="index.html">                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="110" style="vertical-align: middle; margin-right: 10px;">                        <span class="logo-text" style="font-size: 24px; font-weight: 700; color: #d4af37;">Golden Goose</span>                    </a>                </div>
+                    <ul class="nav-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="team.html">Our Team</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li class="dropdown">
+                            <a href="projects.html" class="active">Projects <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="el-quemado.html" class="active">El Quemado</a>
+                                <a href="rincon-salar.html">Rincon Salar</a>
+                                <a href="quebec-claim.html">Quebec Claim</a>
+                            </div>
+                        </li>
                         <li><a href="investors.html">Investors</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <div class="container">
+                <div class="project-hero-content">
+                    <h1>El Quemado Lithium Project</h1>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Salta Province, Argentina
+                    </div>
+                    <p>Our flagship lithium project located in the heart of South America's "Lithium Triangle", targeting high-grade lithium-bearing pegmatite formations with excellent development potential.</p>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section">
+            <div class="container">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p>The El Quemado Lithium Project encompasses 4,200 hectares of highly prospective land in the Salta Province of northwestern Argentina. The project is strategically located within South America's renowned "Lithium Triangle", which hosts approximately 60% of the world's lithium resources.</p>
+                    <p>Initial surveys and exploration work have identified multiple lithium-bearing pegmatite formations with significant concentrations of spodumene, the primary lithium-bearing mineral. Preliminary sampling has returned lithium oxide (Li₂O) grades ranging from 1.2% to 3.5%, indicating substantial economic potential.</p>
+                    <p>Golden Goose Exploration acquired the El Quemado property in 2020 and has since conducted extensive geological mapping, geophysical surveys, and preliminary drilling to delineate the resource potential. The company is currently advancing the project through a comprehensive exploration and development program aimed at establishing a maiden resource estimate by late 2024.</p>
+                    
+                    <div class="key-facts">
+                        <div class="fact-item">
+                            <div class="fact-icon">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <div class="fact-text">
+                                <h4>Location</h4>
+                                <p>Salta Province, Argentina</p>
+                            </div>
+                        </div>
+                        <div class="fact-item">
+                            <div class="fact-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="fact-text">
+                                <h4>Project Size</h4>
+                                <p>4,200 hectares</p>
+                            </div>
+                        </div>
+                        <div class="fact-item">
+                            <div class="fact-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="fact-text">
+                                <h4>Target Resource</h4>
+                                <p>Lithium (pegmatite)</p>
+                            </div>
+                        </div>
+                        <div class="fact-item">
+                            <div class="fact-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="fact-text">
+                                <h4>Current Phase</h4>
+                                <p>Advanced Exploration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Gallery -->
+                <div class="project-gallery">
+                    <h2>Project Gallery</h2>
+                    <div class="gallery-grid">
+                                            <div class="gallery-item">                        <img src="images/proyects/proyecto.jpg" alt="El Quemado Aerial View">                    </div>
+                                            <div class="gallery-item">                        <img src="images/proyects/proyecto.jpg" alt="Lithium Pegmatite Sample">                    </div>
+                        <div class="gallery-item">
+                            <img src="images/proyects/proyecto.jpg" alt="Drilling Operations">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/proyects/proyecto.jpg" alt="Core Samples">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/proyects/proyecto.jpg" alt="Project Geologists">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/proyects/proyecto.jpg" alt="Site Infrastructure">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Geology & Mineralogy -->
+                <div class="project-section">
+                    <h2>Geology & Mineralogy</h2>
+                    <p>The El Quemado property is characterized by several large pegmatite bodies intruded into metamorphic host rocks. The pegmatites are predominantly composed of quartz, feldspar, and mica, with significant concentrations of spodumene, the primary lithium-bearing mineral of economic interest.</p>
+                    <p>Geological mapping and sampling have identified at least seven major pegmatite dykes across the property, ranging from 5 to 25 meters in width and extending for several hundred meters along strike. The pegmatites are exposed at surface in numerous locations, facilitating cost-effective exploration and future mining operations.</p>
+                    <p>Mineralogical studies have confirmed that spodumene is the dominant lithium-bearing mineral, with crystals typically ranging from 2 to 15 cm in length. Additional valuable minerals identified include tantalite, beryl, and cassiterite, which may provide valuable by-product credits in future mining operations.</p>
+                    
+                    <div class="project-map" id="geology-map"></div>
+                </div>
+                
+                <!-- Exploration Work -->
+                <div class="project-section">
+                    <h2>Exploration & Development</h2>
+                    <p>Golden Goose Exploration has implemented a systematic exploration program at El Quemado, including:</p>
+                    <ul>
+                        <li>Detailed geological mapping and surface sampling across the entire property</li>
+                        <li>High-resolution geophysical surveys including magnetic and radiometric surveys</li>
+                        <li>Trenching and channel sampling of exposed pegmatite bodies</li>
+                        <li>Initial diamond drilling program consisting of 25 holes totaling 3,500 meters</li>
+                        <li>Preliminary metallurgical testing to assess lithium recoverability</li>
+                        <li>Environmental baseline studies in preparation for future development activities</li>
+                    </ul>
+                    <p>Initial drilling results have been highly encouraging, with highlight intercepts including:</p>
+                    <ul>
+                        <li>12.5 meters at 1.8% Li₂O from 35 meters (hole EQ-22-003)</li>
+                        <li>18.2 meters at 1.5% Li₂O from 42 meters (hole EQ-22-007)</li>
+                        <li>8.6 meters at 2.3% Li₂O from 75 meters (hole EQ-22-012)</li>
+                        <li>22.4 meters at 1.6% Li₂O from 120 meters (hole EQ-23-021)</li>
+                    </ul>
+                    <p>These results confirm the presence of high-grade lithium mineralization at depth and support the project's significant economic potential.</p>
+                </div>
+                
+                <!-- Development Timeline -->
+                <div class="project-section">
+                    <h2>Development Timeline</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <h4>Q3 2020</h4>
+                                <p>Project Acquisition</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Property Acquisition & Initial Assessment</h4>
+                                <p>Golden Goose acquired the El Quemado property and conducted initial site assessment and data compilation.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <h4>2021-2022</h4>
+                                <p>Phase 1 Exploration</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Geological Mapping & Initial Drilling</h4>
+                                <p>Completed geological mapping, surface sampling, and initial 2,500m drilling program.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <h4>2023</h4>
+                                <p>Phase 2 Exploration</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Expanded Drilling & Metallurgical Testing</h4>
+                                <p>Additional 3,500m of drilling, preliminary resource modeling, and initial metallurgical test work.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <h4>2024</h4>
+                                <p>Resource Definition</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Maiden Resource Estimate & PEA</h4>
+                                <p>Planned completion of maiden resource estimate and preliminary economic assessment.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <h4>2025-2026</h4>
+                                <p>Development</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Feasibility & Permitting</h4>
+                                <p>Feasibility studies, environmental permitting, and project financing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Environment & Community -->
+                <div class="project-section">
+                    <h2>Environment & Community</h2>
+                    <p>Golden Goose Exploration is committed to the highest standards of environmental stewardship and community engagement at the El Quemado Project. The company has implemented comprehensive environmental baseline studies to assess and mitigate potential impacts of future mining activities.</p>
+                    <p>Our engagement with local communities includes:</p>
+                    <ul>
+                        <li>Regular consultation meetings with community leaders and stakeholders</li>
+                        <li>Local employment and training initiatives</li>
+                        <li>Support for community development projects in education and healthcare</li>
+                        <li>Transparent communication regarding project development and environmental management</li>
+                    </ul>
+                    <p>The company is working closely with local and regional authorities to ensure all exploration and development activities comply with Argentine regulations and international best practices for sustainable mining.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h3>Interested in El Quemado?</h3>
+                    <p>Contact our team for more information about the El Quemado Lithium Project or to discuss potential investment or partnership opportunities.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn">Contact Us</a>
+                        <a href="investors.html" class="btn btn-outline">Investor Information</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Golden Goose Exploration. All rights reserved.</p>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p>Stay updated with our latest projects and company news.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">                    <div class="footer-logo">                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="90" style="vertical-align: middle; margin-right: 10px;">                        <span style="font-size: 20px; font-weight: 700; color: #d4af37;">Golden Goose</span>                    </div>                    <p>A premier geological exploration company dedicated to discovering and developing mineral resources with a commitment to sustainability and responsible practices.</p>                </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Mining Way, Resource City</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@goldengoose.com</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="investors.html">Investors</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Golden Goose Exploration. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
 
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
     <script src="scripts.js"></script>
     <script>
         // Initialize geology map

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>Golden Goose Exploration | Home</title>
     <link rel="icon" href="images/logo/logominimalistic.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,173 +11,176 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="110" style="vertical-align: middle; margin-right: 10px;">
-                        <span class="logo-text" style="font-size: 24px; font-weight: 700; color: #d4af37;">Golden Goose</span>
-                    </a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="team.html">Our Team</a></li>
-                    <li class="dropdown">
-                        <a href="projects.html">Projects <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="el-quemado.html">El Quemado</a>
-                            <a href="rincon-salar.html">Rincon Salar</a>
-                            <a href="quebec-claim.html">Quebec Claim</a>
-                        </div>
-                    </li>
-                    <li><a href="investors.html">Investors</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Discovering Earth's <span>Golden</span> Potential</h1>
-                <p>Golden Goose Exploration is a leading geological exploration company committed to sustainable resource discovery and development across the globe.</p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn">Our Projects</a>
-                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>At Golden Goose, we combine cutting-edge technology with decades of geological expertise to identify and develop high-potential mineral deposits while maintaining the highest standards of environmental stewardship and community engagement.</p>
-                </div>
-                                <div class="about-image">                    <img src="images/aboutus/aboutus.jpg" alt="About Golden Goose">                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Projects</h2>
-            </div>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/proyects/proyecto.jpg" alt="El Quemado Project">
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <nav class="navbar">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="110" style="vertical-align: middle; margin-right: 10px;">
+                            <span class="logo-text" style="font-size: 24px; font-weight: 700; color: #d4af37;">Golden Goose</span>
+                        </a>
                     </div>
-                    <div class="project-content">
-                        <h3>El Quemado</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="el-quemado.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/300" alt="Rincon Salar Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>Rincon Salar</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="rincon-salar.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/300" alt="Quebec Claim Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>Quebec Claim</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="quebec-claim.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <p>Stay updated with our latest projects and company news.</p>
-                </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="90" style="vertical-align: middle; margin-right: 10px;">
-                        <span style="font-size: 20px; font-weight: 700; color: #d4af37;">Golden Goose</span>
-                    </div>
-                    <p>A premier geological exploration company dedicated to discovering and developing mineral resources with a commitment to sustainability and responsible practices.</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Mining Way, Resource City</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@goldengoose.com</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="team.html">Our Team</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li class="dropdown">
+                            <a href="projects.html">Projects <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="el-quemado.html">El Quemado</a>
+                                <a href="rincon-salar.html">Rincon Salar</a>
+                                <a href="quebec-claim.html">Quebec Claim</a>
+                            </div>
+                        </li>
                         <li><a href="investors.html">Investors</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Discovering Earth's <span>Golden</span> Potential</h1>
+                    <p>Golden Goose Exploration is a leading geological exploration company committed to sustainable resource discovery and development across the globe.</p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn">Our Projects</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Golden Goose Exploration. All rights reserved.</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Us</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>At Golden Goose, we combine cutting-edge technology with decades of geological expertise to identify and develop high-potential mineral deposits while maintaining the highest standards of environmental stewardship and community engagement.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/aboutus/aboutus.jpg" alt="About Golden Goose">
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+        <!-- Projects Section -->
+        <section class="section projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Projects</h2>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/proyects/proyecto.jpg" alt="El Quemado Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>El Quemado</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="el-quemado.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/300" alt="Rincon Salar Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Rincon Salar</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="rincon-salar.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/300" alt="Quebec Claim Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Quebec Claim</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="quebec-claim.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p>Stay updated with our latest projects and company news.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="images/logo/logominimalistic.png" alt="Golden Goose Exploration" height="90" style="vertical-align: middle; margin-right: 10px;">
+                            <span style="font-size: 20px; font-weight: 700; color: #d4af37;">Golden Goose</span>
+                        </div>
+                        <p>A premier geological exploration company dedicated to discovering and developing mineral resources with a commitment to sustainability and responsible practices.</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Mining Way, Resource City</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@goldengoose.com</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="investors.html">Investors</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Golden Goose Exploration. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html> 
